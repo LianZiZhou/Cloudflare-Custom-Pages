@@ -1,5 +1,5 @@
-<html lang="zh"><head>
-    <title>访问已被拦截</title>
+<html lang="en"><head>
+    <title>Access Denied</title>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -547,12 +547,28 @@
             background-position: bottom;
             background-size: contain;
             background-repeat: no-repeat;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.03);
+        }
+
+        .content-body {
+            padding: 2rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .text-black {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
         }
 
         .left-sec p, .left-sec ul li, h1{
-            font-size: 12px;
-            color:  #3d3d3d;
-            line-height: 1.35;
+            font-size: 16px;
+            color:  #2c3e50;
+            line-height: 1.6;
         }
 
         .left-sec ul{
@@ -585,7 +601,7 @@
            display: inline;
             margin-right: 0.6rem;
             margin-bottom: 0.2rem;
-            font-size: 10px;
+            font-size: 13px;
         }
 
         ul.cferror_details li::before {
@@ -602,25 +618,26 @@
         }
 
         h1{
-            font-size: 1.21rem;
+            font-size: 1.35rem;
+            font-weight: 600;
         }
 
         .left-sec p.highlight{
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
         }
 
         .sub-footer p{
-            color: #747474;
+            color: #6c757d;
         }
 
         .error-text{
-            color:#d3333e!important;
+            color:#e74c3c!important;
         }
 
         .sub-footer ul li{
-            color: #3d3d3d;
-            font-size: 10px;
+            color: #495057;
+            font-size: 13px;
             display: inline;
             margin-left: 5px;
         }
@@ -649,6 +666,19 @@
     @-webkit-keyframes bubbles { 33% { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
     @keyframes bubbles { 33% { -webkit-transform: translateY(10px); transform: translateY(10px); } 66% { -webkit-transform: translateY(-10px); transform: translateY(-10px); } 100% { -webkit-transform: translateY(0); transform: translateY(0); } }
     .bubbles { background-color: #404040; width:15px; height: 15px; margin:2px; border-radius:100%; -webkit-animation:bubbles 0.6s 0.07s infinite ease-in-out; animation:bubbles 0.6s 0.07s infinite ease-in-out; -webkit-animation-fill-mode:both; animation-fill-mode:both; display:inline-block; }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content-body {
+        animation: fadeIn 0.6s ease-out;
+    }
+
+    * {
+        transition: all 0.3s ease;
+    }
   
     </style>
     <style type="text/css">
@@ -663,18 +693,18 @@
     <div class="md:flex min-h-screen main-body">
         <div class="w-full md:w-1/2 bg-white flex items-center justify-center left-sec">
             <div class="max-w-sm m-8 content-body">
-                <div class="text-black text-5xl md:text-15xl font-black">很抱歉，您的访问已被拦截</div>
+                <div class="text-black text-5xl md:text-15xl font-black">Access Denied</div>
 
                 <p class="text-grey-darker text-2xl md:text-3xl mb-7 leading-normal">
-                    </p><p class="sub-header"><h1> 本站正在使用安全服务来保护自己免受在线攻击 </h1></p>
-                             <p class="sub-header"><h1> 请自行联系网站管理员 </h1></p>
+                    </p><p class="sub-header"><h1>Security protection is active</h1></p>
+                             <p class="sub-header"><h1>Contact the site administrator if needed</h1></p>
                     <br><br>
-                    您的IP地址被禁止访问本站
+                    Your IP has been blocked
                  <div class="sub-footer">
                     <div class="w-full h-2 bg-grey-light my-3 md:my-6"></div>
                     <ul>
-                        <li>Cloudflare事件ID: ::RAY_ID::</li>
-                        <li>你的IP: ::CLIENT_IP::</li>
+                        <li>Cloudflare Ray ID: ::RAY_ID::</li>
+                        <li>Your IP: ::CLIENT_IP::</li>
                         <li>Performance &amp; Security by Cloudflare</li>
                     </ul>
                 </div> 
